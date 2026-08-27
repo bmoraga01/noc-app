@@ -8,3 +8,6 @@ logs/
 .env
 
 /mongo/
+/src/generated/prisma
+/postgres/
+prisma/migrations/

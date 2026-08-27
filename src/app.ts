@@ -1,5 +1,8 @@
+
 import { envs } from "./config/plugins/envs.plugin";
+import { prisma } from "./config/plugins/prisma.plugin";
 import { MongoDatabase } from "./data/mongo";
+import { LogSeverityLevel } from "./domain/entities/log.entity";
 import { Server } from "./presentation/server";
 import 'dotenv/config';
 
@@ -15,18 +18,21 @@ async function main() {
         dbName: envs.MONGO_DB_NAME,
     });
 
-    // Crear un registro
-    // const newLog = await LogModel.create({
-    //     message: 'This is a test log message 5',
-    //     origin: 'src/app.ts',
-    //     level: 'medium',
+    // const newLog = await prisma.logModel.create({
+    //     data: {
+    //         level: 'LOW',
+    //         message: 'Test message 6',
+    //         origin: 'app.ts'
+    //     }
     // });
+    // console.log({ newLog });
 
-    // await newLog.save();
-    // console.log(newLog);
-
-    // const logs = await LogModel.find();
-    // console.log(logs);
+    // const logs = await prisma.logModel.findMany({
+    //     where: {
+    //         level: LogSeverityLevel.low.toString().toUpperCase()
+    //     }
+    // });
+    // console.log(logs)
 
     Server.start();
 }
