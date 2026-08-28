@@ -8,6 +8,11 @@ logs/
 .env
 
 /mongo/
+/mongo-test/
 /src/generated/prisma
 /postgres/
+/postgres-test/
 prisma/migrations/
+
+
+coverage/

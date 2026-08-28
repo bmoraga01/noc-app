@@ -51,9 +51,10 @@ export class FileSystemDataSource implements LogDatasource {
 
         if ( content === '' ) return [];
 
-        const logs = content.split('\n').map(
-            log => LogEntity.fromJson( log )
-        )
+        const logs = content
+            .split('\n')
+            .filter( log => log.trim() !== '' )
+            .map( log => LogEntity.fromJson( log ) )
 
         return logs;
     }

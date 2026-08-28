@@ -21,7 +21,18 @@ npm i
 docker compose up -d
 ```
 
-### 5. Ejecutar la aplicación en modo desarrollo:
+### 5. Generar el cliente de prisma:
+
+```
+npx prisma generate
+```
+
+### 6. Crear y aplicar las migraciones:
+```
+npx prisma migrate dev --name migration_name
+```
+
+### 7. Ejecutar la aplicación en modo desarrollo:
 ```
 npm run dev
 ```
